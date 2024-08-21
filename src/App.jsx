@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { editData, getData } from './api'
-
+import img from './assets/completed.png'
 
 function App() {
 const [items,setItems]= useState([])
@@ -26,7 +26,7 @@ useEffect(()=>{
     <div className='box' key={item.id}>
       <p style={{color:'green',fontWeight:'bold'}}>{item.date}</p>
      <h2 style={{color: item.isCompleted && 'green'}}>DAY {item.id}</h2>
-     {item.isCompleted && <img src='https://cdn-icons-png.flaticon.com/128/6785/6785304.png'></img>}
+     {item.isCompleted && <img src={img}></img>}
      {item.isCompleted? <p style={{color:'green'}}>I have done it</p> : 
      <p><span>Are you completed ? 
       </span><span style={{color:'green',cursor:'pointer'}} onClick={()=>editBox(item.id)}>Yes</span>/<span style={{color:'red'}}>No</span></p>}
