@@ -27,13 +27,17 @@ h2{
 }
 .box{
   border: 1px solid grey;
-  border-radius: 20px;
-  width: 16rem;
-  height: 16rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 17rem;
+  height: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.box:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 img{
   margin-top: 1rem;
@@ -43,4 +47,16 @@ img{
 }
 span{
   font-weight: bold;
+}
+.undo-img{
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+.date-img{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+ 
 }
