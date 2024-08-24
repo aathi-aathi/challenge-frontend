@@ -8,9 +8,12 @@ import undoImg from './assets/undo.png'
 function App() {
 const [items,setItems]= useState([])
 const [count,setCount] = useState(0)
+const [itemCount,setItemCount]=useState(0)
 const getBox = async() =>{
  const data = await getData()
  setItems(data)
+ const filterItem = data.filter((item) => item.isCompleted == 'completed'  )
+ setItemCount(filterItem.length)
 }
 const editBox = async(id)=>{
   await editData(id,{status:'completed'})
@@ -30,6 +33,7 @@ useEffect(()=>{
   return (
     <>
     <h1>90 Days Challenge</h1>
+    <h2>{itemCount}/90</h2>
     <div className='containter'>
       {items.map((item)=>
     <div className='box' key={item.id}>
