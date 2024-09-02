@@ -1,5 +1,5 @@
-// const backendUrl = 'https://challege-backend.onrender.com'
-const backendUrl = 'http://localhost:7303'
+const backendUrl = 'https://challege-backend.onrender.com'
+// const backendUrl = 'http://localhost:7303'
 const getData = async() =>{
     const response = await fetch(`${backendUrl}/challenge`)
     return await response.json()
