@@ -1,7 +1,29 @@
-const backendUrl = 'https://challege-backend.onrender.com'
-// const backendUrl = 'http://localhost:7303'
+// const backendUrl = 'https://challege-backend.onrender.com'
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+console.log(backendUrl)
 const getData = async() =>{
     const response = await fetch(`${backendUrl}/challenge`)
+    return await response.json()
+}
+const postData =async(userData)=>{
+    const response = await fetch(`${backendUrl}/user`,{
+        method:"POST",
+        body:JSON.stringify(userData),
+        headers:{
+        "Content-Type":"application/json; charset=utf-8"
+    }
+}) 
+    return await response.json()
+}
+const userLogin =async(userData)=>{
+    const response = await fetch(`${backendUrl}/login`,{
+        method:"POST",
+        body:JSON.stringify(userData),
+        headers:{
+        "Content-Type":"application/json; charset=utf-8"
+    }
+
+    }) 
     return await response.json()
 }
 const editData = async(id,userData)=>{
@@ -33,4 +55,4 @@ const setDateData = async(id,userData)=>{
     })
     return await response.json()
 }
-export {getData,editData,changeEditData,setDateData}
+export {postData,userLogin,getData,editData,changeEditData,setDateData}
