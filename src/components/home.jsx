@@ -41,7 +41,7 @@ if(loading){
 )}
     return(
         <div className="h-screen w-full  flex flex-col items-center  gap-1  ">
-        <h1>Home</h1>
+        <img className="mt-4 mb-2" src="https://cdn-icons-png.flaticon.com/128/17705/17705487.png"/>
         <div className="flex flex-col gap-4 items-center w-full">
         {records.map((record)=> (<div key={record.id} className="flex gap-2 flex-col items-center border border-pink-400 rounded h-fit w-11/12 shadow-md max-w-96 ">
         <div className="flex gap-4 justify-evenly items-center w-full mt-2">
