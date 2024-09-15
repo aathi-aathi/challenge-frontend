@@ -70,7 +70,7 @@ if(data.code == 0){
             </div>
             <button className="flex justify-center bg-pink-600 rounded w-full p-2 text-white hover:bg-pink-700 mb-2 ...">
             {loading ? <div className="w-5 h-5 border-4 border-t-transparent 
-            border-blue-500 rounded-full animate-spin" 
+            border-pink-500 rounded-full animate-spin" 
             role="status"><span className="sr-only">Loading...</span>
             </div>: 'Login'}
             </button> 

@@ -1,6 +1,4 @@
-// const backendUrl = 'https://challege-backend.onrender.com'
-const backendUrl = import.meta.env.VITE_BACKEND_URL
-console.log(backendUrl)
+ const backendUrl = 'https://challege-backend.onrender.com'
 const getData = async() =>{
     const response = await fetch(`${backendUrl}/challenge`)
     return await response.json()
