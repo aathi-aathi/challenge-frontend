@@ -42,8 +42,8 @@ useEffect(()=>{
     return(
         <div className="h-screen w-full  flex flex-col items-center  gap-1  ">
         <img className="mt-4 mb-2" src="https://cdn-icons-png.flaticon.com/128/17705/17705487.png"/>
-        <h1 className="font-bold text-xl text-pink-700">{import.meta.env.VITE_HAPPY}</h1>
-        <h2 className="font-bold text-3xl text-sky-400">{import.meta.env.VITE_TITLE}</h2>
+        <h1 className="font-bold text-xl text-pink-700">Happy Birth Day</h1>
+        <h2 className="font-bold text-3xl text-sky-400">My Cute Pondatii</h2>
         <div className="flex flex-col gap-4 items-center w-full">
         {records.map((record)=> (<div key={record.id} className="flex gap-2 flex-col items-center border border-pink-400 rounded h-fit w-11/12 shadow-md max-w-96 ">
         <div className="flex gap-4 justify-evenly items-center w-full mt-2">
