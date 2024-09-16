@@ -32,28 +32,30 @@ setCount(count+1)
 useEffect(()=>{
     getActions()
 },[count])
-if(loading){
-    return (
-    <div className="h-screen w-full flex justify-center items-center">
-        <img className='h-16 w-16'src="https://www.icegif.com/wp-content/uploads/2023/10/icegif-293.gif"/>
-    </div>
+// if(loading){
+//     return (
+//     <div className="h-screen w-full flex justify-center items-center">
+//         <img className='h-16 w-16'src="https://www.icegif.com/wp-content/uploads/2023/10/icegif-293.gif"/>
+//     </div>
     
-)}
+// )}
     return(
         <div className="h-screen w-full  flex flex-col items-center  gap-1  ">
         <img className="mt-4 mb-2" src="https://cdn-icons-png.flaticon.com/128/17705/17705487.png"/>
+        <h1 className="font-bold text-xl text-pink-700">{import.meta.env.VITE_HAPPY}</h1>
+        <h2 className="font-bold text-3xl text-sky-400">{import.meta.env.VITE_TITLE}</h2>
         <div className="flex flex-col gap-4 items-center w-full">
         {records.map((record)=> (<div key={record.id} className="flex gap-2 flex-col items-center border border-pink-400 rounded h-fit w-11/12 shadow-md max-w-96 ">
         <div className="flex gap-4 justify-evenly items-center w-full mt-2">
         {record.isCompleted =='completed' ?<i
          onClick={()=>unCheckFunc(record.id)} className='fa-solid fa-circle-check fa-2xl text-pink-500'></i>
         : <i className='fa-regular fa-circle fa-2xl text-pink-500'  onClick={()=>checkFunc(record.id)}></i>}
-        <h1 className="font-bold text-pink-600 text-4xl">DAY-{record.id}</h1>
+        <h1 className="font-bold text-pink-600 text-4xl">D<span className="text-sky-400">A</span>Y-{record.id}</h1>
        {record.isEdit ?
        <input type='date' onChange={handleDate} id={record.id}/> :
        <h1 className="font-bold text-pink-600 text-xl">{record.date}</h1>}
         </div>
-        {record.isCompleted =='completed' && <button onClick={()=>changeEditFunc(record.id)} className="bg-pink-600 p-2 rounded-xl text-xl text-white mb-2">Change Date</button>}
+        {record.isCompleted =='completed' && <button onClick={()=>changeEditFunc(record.id)} className="bg-sky-400 p-2 rounded-xl text-xl text-white mb-2">Change Date</button>}
         </div>))}
         </div>
         </div>
